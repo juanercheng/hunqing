@@ -1,0 +1,95 @@
+page{
+  background-color: #f0f2f5;
+  height: 100%;
+}
+.commodity{
+  background-color: #f7f8fa;
+  width: 100%; 
+}
+.commodity .gray{
+  padding-left: 15px;
+  padding-right:15px;
+  padding-top: 15px;
+  padding-bottom: 0.7rem; 
+  display: flex;
+  align-items: center;
+  
+}
+.commodity .gray .title{
+  font-size: 0.875rem;
+  padding-left: 0.875rem;
+}
+.commodity .gray .title .price{
+  padding-top: 18px;
+  font-size: 0.75rem;
+}
+.company{
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right:15px;
+  padding-top: 20px;
+  border-bottom: 1px #ced3db solid;
+  padding-bottom: 15px;
+  background-color: #fff;
+}
+.company .company-text{
+  padding-left:0.812rem;
+  font-size: 14px;
+}
+.company .company-phone{
+  font-size:11px;
+  padding-top:11px;
+}
+.order-details{
+  background-color: #fff;
+  font-size: 0.8rem;
+  padding-top: 1.87rem;
+  padding-bottom: 1.87rem;
+  display: flex;
+  justify-content: center
+}
+.order-details .order-star{
+  text-align: center;
+  width:70%
+}
+.order-details .order-star .star{
+  margin-top: 1.18rem;
+  display: flex;
+  justify-content: space-around;
+}
+.order-details .order-time{
+  padding-top: 15px;
+}
+.line{
+  height: 10px;
+  width: 100%;
+  background-color: #f0f2f5;
+}
+.refund{
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right:15px;
+  background-color: #fff;
+}
+.textarea{
+  padding-left: 15px;
+  padding-right:15px;
+  padding-top: 1.25rem;
+  font-size: 0.75rem;
+  width:93%; 
+  height:11.37rem;
+  background-color: #fff;
+} 
+.placeholder{
+  font-size: 0.75rem;
+  padding-left: 15px;
+}
+.buttton{
+  margin-top: 3rem;
+  margin-bottom: 1.56rem;
+  background-color: #236093;
+  color: #fff;
+  height: 2.5rem;
+  width: 7.8rem
+}

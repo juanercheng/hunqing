@@ -1,0 +1,60 @@
+<view>
+  <view class='mine'>
+    <image wx:if='{{loginImages}}' src='./../../../images/mine/head.png' style='width:60px;height:60px'></image>
+    <view wx:if='{{images}}' style='width:60px;height:60px;border-radius:30px;overflow:hidden;'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <button class='login' plain='ture' hover-class='none' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <text wx:if='{{loginName}}'>授权登陆</text>
+      <open-data type="userNickName" wx:if='{{name}}'></open-data>
+    </button>
+  </view>
+  <view class='line'></view> 
+  <view class='list' bindtap='personal'>
+    <view class='list-left'>
+      <image src='./../../../images/mine/data.png' style='width:25px;height:25px'></image>
+      <view class='text'>完善个人资料</view>
+    </view>
+    <image src='./../../../images/moreIcon.png' style='width:6px;height:12px'></image>
+  </view>
+  <view class='list' bindtap='customized'>
+    <view class='list-left'>
+      <image src='./../../../images/mine/private.png' style='width:25px;height:25px'></image>
+      <view class='text'>私人定制</view>
+    </view>
+    <image src='./../../../images/moreIcon.png' style='width:6px;height:12px'></image>
+  </view>
+  <view class='list' bindtap='about'>
+    <view class='list-left'>
+      <image src='./../../../images/mine/about.png' style='width:25px;height:25px'></image>
+      <view class='text'>关于我们</view>
+    </view>
+    <image src='./../../../images/moreIcon.png' style='width:6px;height:12px'></image>
+  </view>
+  <view class='signOut' bindtap='signOut'>退出登录</view>
+  <!-- <view class="modal" style='height:100%' title="" hidden="{{login}}">
+    <view class='popup'>
+      <view class='title'>请输入短信验证码</view>
+      <view class='input-code'>
+        <input type='number' class='number' bindinput='msg' plain='ture' placeholder-style='font-size:12px;' placeholder='请输入验证码'></input>
+        <button class='input-get' bindtap='codeMsg'>点击获取</button>
+      </view>
+      <button class='now' bindtap='login' bindtap='loginNow'>立即登录</button>
+      <view class='end' bindtap='other'>使用其他手机号登录</view>
+    </view>
+  </view>
+  <view class="modal" style='height:100%' title="" hidden="{{loginOther}}">
+    <view class='popup'>
+      <view class='title'>请输入手机号及短信验证码</view>
+      <view class='input-code'>
+        <input type='number' class='number' plain='ture' placeholder-style='font-size:12px;' placeholder='请输入手机号'></input>
+      </view>
+      <view class='input-code' style='margin-top:10px'>
+        <input type='number' class='number' plain='ture' placeholder-style='font-size:12px;' placeholder='请输入验证码'></input>
+        <button class='input-get'>点击获取</button>
+      </view>
+      <button class='now' style='margin-top: 40px;margin-bottom: 40px;' bindtap='next'>下一步</button>
+      <view style='width:100px;height:1px'></view>
+    </view>
+  </view> -->
+</view>

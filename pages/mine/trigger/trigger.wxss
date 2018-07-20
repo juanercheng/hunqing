@@ -1,0 +1,15 @@
+.login{
+  text-align: center;
+  margin-top: 5.5rem;
+}
+.login .trigger{
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  width: 50%;
+  border: none;
+}
+.login .number{
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #a8abb3;
+}

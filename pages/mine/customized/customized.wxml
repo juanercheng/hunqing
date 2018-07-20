@@ -1,0 +1,73 @@
+<view>
+  <view class='line'></view>
+  <view wx:if='{{edit}}'>
+    <view class='list'>
+      <view>姓名</view>
+      <input class='name' placeholder='请输入姓名' value='{{name}}' maxlength='10' placeholder-class='name-placeholder' type='text' bindinput='name'></input>
+    </view>
+    <view class='list'>
+      <view>婚礼举办地</view>
+      <input class='address' placeholder='请输入婚礼举办地' value='{{address}}' maxlength='20' placeholder-class='name-placeholder' type='text' bindinput='address'></input>
+    </view>
+    <view class='list-other'>
+      <picker style='width: 100%' mode="date" value="{{date}}" start='{{nowTime}}' bindchange="bindDateChange">
+        <view class="picker">
+          <view style='display:flex'>
+            婚期
+            <view class='name'>{{date}}</view>
+          </view>
+          <image src='./../../../images/moreIcon.png' style='width: 6px;height: 12px;'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='list-other'>
+      <picker style='width: 100%' bindchange="bindPickerChange" value="{{index}}" range="{{style}}">
+        <view class="picker">
+          <view style='display:flex'>
+            风格
+            <view class='name'>{{styleName}}</view>
+          </view>
+          <image src='./../../../images/moreIcon.png' style='width: 6px;height: 12px;'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='list'>
+      <view>预算金额</view>
+      <input class='budget' placeholder='请输入预算金额' value='{{budget}}' maxlength='10' placeholder-class='name-placeholder' type='number' bindinput='budget'></input>
+    </view>
+    <view class='list-text'>
+      <view style='margin-top: 0.937rem'>留言</view>
+      <textarea class='textarea' value='{{textarea}}' placeholder='还有什么想跟我们说的嘛~' placeholder-class='textarea-class' bindinput='textarea'></textarea>
+    </view>
+    <button class='save' bindtap='save'>完成</button>
+    <view>
+    </view>
+  </view>
+  <view wx:if='{{complete}}'>
+    <view class='list-complete'>
+      <view>姓名</view>
+      <view>{{name}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>婚礼举办地</view>
+      <view>{{address}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>婚期</view>
+      <view>{{date}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>风格</view>
+      <view>{{styleName}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>预算金额</view>
+      <view>{{budget}}</view>
+    </view>
+    <view class='leaving'>
+      <view>留言</view>
+      <view class='leaving-content'>{{textarea}}</view>
+    </view>
+    <button class='button-edit' style='margin-top: 3.125rem;color: #236093;border: 1px #236093 solid; font-size: 0.812rem; height: 2.5rem; width: 7.812rem;' plain='true' bindtap='buttonEdit'>编辑</button>
+  </view>
+</view>

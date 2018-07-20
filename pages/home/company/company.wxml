@@ -1,0 +1,41 @@
+<view>
+  <view class='top' wx:if='{{hello}}'>
+    <input class='input' bindtap='focusBind' disabled='true' placeholder='|  输入关键字搜索' placeholder-class='placeholder'></input>
+  </view>
+  <view class='top' wx:if='{{world}}'>
+    <view class='header'>
+      <image src='./../../../images/home/search.png' style='width:14px;height:14px;margin-left: 10px;'></image>
+      <view class='line'></view>
+      <input type='text' class='inputTwo' bindblur='lost' bindinput='searchText' focus='true'></input>
+    </view>
+  </view>
+  <view class='line-top'></view>
+  <view style='margin-top:3.75rem;'></view>
+  <view class="list" wx:for='{{list}}' wx:if='{{list.length == 0 ? false : true}}' data-id="{{item.id}}" wx:key="{{index}}">
+    <view id='{{index}}' bindtap='listCompany'>
+      <view class='image' style='background-image:url({{item.imgShopBackground}});background-size:100% 100%;'>
+        <image src='{{item.logo}}' style='width:3.875rem;height:3.875rem;margin-top:1.4rem;border-radius: 1.937rem;'></image>
+        <view class='title-content'>{{item.companyName}}</view>
+        <view class="title-content-text">{{item.companySlogan}}</view>
+      </view>
+      <view class='location'>
+        <image src='./../../../images/home/location.png' style='width:9px;height:12px'></image>
+        <text class='location-text'>{{item.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='case' style='' wx:if='{{list.length == 0 ? true : false}}'>
+    <view class='case-title'>案例</view>
+    <view style='text-align:center;padding-top:2.5rem;padding-bottom:2.5rem'>
+      <image src='./../../../images/home/searchNo.png' style='height:5.062rem;width:6.75rem;'></image>
+      <view style='color:#a8abb3;margin-top:1.25rem;font-size:0.875rem;'>没有搜索到相关信息</view>
+    </view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideNoMore}}">
+    <view class="weui-loadmore__tips">没有更多了</view>
+  </view> 
+</view>

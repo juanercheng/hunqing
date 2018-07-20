@@ -1,0 +1,128 @@
+.newCircle{
+  margin-top: 1.25rem;
+  margin-right: 0.937rem;
+  margin-left: 0.9375rem;
+}
+.newCircle .comment{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+}
+.newCircle .comment .comment-man{
+  display: flex; 
+  align-items: center;
+}
+.newCircle .comment .comment-man .comment-name{
+  margin-left:0.937rem;
+  color: #116699;
+}
+.newCircle .comment .comment-time{
+  color: #a8abb2;
+}
+.newCircle .content{
+  margin-top:0.937rem;
+  font-size: 0.937rem;
+}
+.newCircle .images{
+  margin-top: 1.25rem;
+}
+.newCircle .company{
+  margin-top:0.937rem;
+  display: flex;
+  align-items: center;
+}
+.newCircle .company .company-title{
+  font-size: 0.812rem;
+  margin-left: 0.812rem;
+}
+.comment-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.125rem;
+  margin-right: 0.937rem;
+  margin-left: 0.9375rem;
+  font-size: 1.25rem;
+}
+.comment-details .text-number{
+  display: flex;
+  align-items: center;
+}
+.comment-details .text-number .number{
+  color: #a8abb2;
+  font-size: 0.75rem;
+}
+.system{
+  margin-top: 1.875rem;
+  margin-left:0.937rem;
+  margin-right:0.937rem;
+  margin-bottom: 1.562rem;
+  background-color: #f2f4f8;
+  font-size: 0.812rem;
+  padding: 0.9375rem;
+}
+.system .system-reply{
+  color:#116699;
+}
+.comment-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment-content .comment-title{
+  display: flex;
+  align-items: center;
+}
+.comment-content .comment-title .comment-name{
+  margin-left: 0.937rem;
+  color: #116699;
+  font-size: 0.875rem;
+}
+.comment-content .comment-time{
+  color: #a8abb2;
+  font-size: 0.625rem;
+}
+.comment-text{
+  margin-top: 5px;
+  font-size: 0.875rem;
+  margin-left: 52px; 
+  margin-bottom: 0.812rem;
+}
+.comment-list{
+  margin-right: 0.937rem;
+  margin-left: 0.9375rem;
+  margin-bottom: 44px;
+  margin-top: 1.562rem;
+}
+.line{
+  height: 1px;
+  width:100%;
+  background-color: #dcdcdc;
+  margin-bottom:0.937rem;
+}
+.online-comment{
+  width: 100%;
+  height: 44px;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px #dcdcdc solid;
+  background-color: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.input{
+  width:77%;
+  margin-left:0.937rem;
+  background-color: #fff;
+  height: 34px;
+  border-radius: 5px;
+  border: 1px #dcdcdc solid;
+}
+.online-comment-text{
+  font-size:15px;
+  margin-left:0.625rem;
+  margin-right:0.937rem;
+  color:#606266;
+}

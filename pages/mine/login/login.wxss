@@ -1,0 +1,40 @@
+ .code{
+   margin: auto;
+   font-size: 0.812rem;
+   margin-top: 2.437rem;
+ }
+ .code .input{
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 2.5rem;
+   height: 3.125rem;
+   border-bottom: 1px #dcdcdc solid;
+   align-items: center;
+   width: 15.312rem;
+ }
+ .code .input .input-text{
+   color: #a8abb3;
+ }
+ .code .login{
+   margin-top: 4.25rem;
+   height: 2.437rem;
+   width: 9.125rem;
+   color: #fff;
+   background-color: #116699;
+ }
+ .code .input .again{
+   color: #236093;
+   border: 1px #236093 solid;
+   height: 1.937rem;
+   width: 5.75rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 0.812rem
+ }
+ .code .other{
+   margin-top: 11.25rem;
+   text-align: center;
+   color: #116699;
+ }

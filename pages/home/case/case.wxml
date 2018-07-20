@@ -1,0 +1,47 @@
+<view>
+  <view class='top'>
+    <view class='header'>
+      <image src='./../../../images/home/search.png' style='width:16px;height:14px;margin-left: 10px;'></image>
+      <view class='line'></view>
+      <input type='text' class='input' bindinput='searchText' bindfocus='zero' placeholder='输入关键字搜索' placeholder-style='font-size:12px;margin-left:10px'></input>
+    </view>
+    <view class='top-choice' bindtap='hot'>
+      <view class='text' style='color:{{colorHot}}'>热度</view>  
+      <view style='margin-left:7px'>
+        <image src='{{imagesHot[0]}}' style='width:6px;height:3px;display:block;'></image>
+        <image src='{{imagesHot[1]}}' style='width:6px;height:3px;display:block;margin-top:3px'></image>
+      </view>
+    </view>
+    <image src='./../../../images/home/line.png' style='width:1px;height:10px;'></image>
+    <view class='top-choice'  bindtap='price'>
+      <view class='text' style='color:{{colorPrice}}'>价格</view>
+      <view style='margin-left:7px'>
+        <image  src='{{imagesPrice[0]}}' style='width:6px;height:3px;display:block;'></image>
+        <image src='{{imagesPrice[1]}}' style='width:6px;height:3px;display:block;margin-top:3px'></image>
+      </view>
+    </view>
+  </view>
+  <view style='margin-top: 46px;'></view>
+  <view wx:for='{{list}}' data-id="{{item.id}}" wx:key="{{index}}">
+    <view class='list' id="{{index}}" bindtap='list'>
+      <view style='width:50%'>
+        <image src='{{item.imgCover}}' style='width:100%;height:123px;'></image>
+      </view>
+      <view class='list-content'>
+        <view class='list-title'>{{item.productName}}</view>
+        <view class='list-text'>{{item.brief}}</view>
+        <view class='list-all-price'>总价 ￥{{item.priceTotal}}</view>
+        <view class='list-price'>预订价
+          <text style='color:red'>￥{{item.priceBook}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+<view class="weui-loadmore" wx:if="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideNoMore}}">
+    <view class="weui-loadmore__tips">没有更多了</view>
+  </view> 
+</view>

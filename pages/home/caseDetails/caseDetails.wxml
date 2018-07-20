@@ -1,0 +1,29 @@
+<view>
+  <view>
+    <image src='{{content.imgBanner[0]}}' style='width:100%;height:262px;' bindtap='big'></image>
+    <view class='images-number'><text style='opacity: 1.0' bindtap='big'>共{{content.imgBanner.length}}张</text></view>
+  </view>
+  <view class='title'>
+    <view class='title-left'>
+      <view class='text'>{{content.productName}}</view>
+      <view class='price-text'>预订价<text style='color:red'>￥{{content.priceBook}}</text></view>
+      <view class='price-all'>总价<text>￥{{content.priceTotal}}</text></view>
+    </view>
+    <view class='title-right' bindtap='reserve'>立即预定</view>
+  </view>
+  <view class='content'>{{content.brief}}</view>
+  <view class='shop'>
+    <view class='shop-title'>
+      <image src='./../../../images/home/shop.png' style='width:14px;height:14px'></image>
+      <view style='margin-left:7px'>{{content.companyName}}</view>
+    </view>
+    <view class='shop-button' bindtap='shop'>进入店铺</view>
+  </view>
+  <view class='case'>案例简介</view>
+  <view class='case-details' wx:if='{{detailHave}}'>
+    <rich-text nodes="{{content.detail}}" ></rich-text>
+  </view>
+  <view class='case-details' style='text-align:center' wx:if='{{detailNull}}'>
+     该案例暂无简介
+  </view>
+</view>

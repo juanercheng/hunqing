@@ -1,0 +1,68 @@
+{ 
+  "pages":[
+    "pages/index/index",
+    "pages/home/advertisement/advertisement",
+    "pages/home/company/company",
+    "pages/home/companyDetails/companyDetails",
+    "pages/home/case/case",
+    "pages/home/caseDetails/caseDetails",
+    "pages/home/confirm/confirm",
+    "pages/home/search/search",
+    "pages/newCircle/newCircle/newCircle",
+    "pages/newCircle/newCircleDetails/newCircleDetails",
+    "pages/newCircle/release/release",
+    "pages/weddingCenter/weddingCenter/weddingCenter",
+    "pages/weddingCenter/payment/payment",
+    "pages/weddingCenter/refund/refund",
+    "pages/weddingCenter/details/details",
+    "pages/weddingCenter/applicationRefund/applicationRefund",
+    "pages/weddingCenter/comment/comment",
+    "pages/mine/mine/mine",
+    "pages/mine/about/about",
+    "pages/mine/customized/customized",
+    "pages/mine/personal/personal",
+    "pages/mine/trigger/trigger",
+    "pages/mine/login/login",
+    "pages/mine/other/other",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "navigationStyle":"border:black"
+  },
+  "tabBar": {
+    "color": "#939599",
+    "selectedColor": "#116699",
+    "backgroundColor":"#fff",
+    "borderStyle": "#e6e6e6",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/homeGray.png",
+        "selectedIconPath": "images/homeColour.png"
+      },
+      {
+        "pagePath": "pages/newCircle/newCircle/newCircle",
+        "text": "新人圈",
+        "iconPath": "images/rookieCircleGray.png",
+        "selectedIconPath": "images/rookieCircleColour.png"
+      },
+      {
+        "pagePath": "pages/weddingCenter/weddingCenter/weddingCenter",
+        "text": "婚礼中心",
+        "iconPath": "images/weddingCenterGray.png",
+        "selectedIconPath": "images/weddingCenterColour.png"
+      },
+      {
+        "pagePath": "pages/mine/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mineGray.png",
+        "selectedIconPath": "images/mineColour.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+<view>
+  <view class="newCircle">
+    <view class="comment" bindtap='details'>
+      <view class='comment-man'>
+        <image src='{{content.tbUserEntity.headportraitimg}}' style="width:35px;height:35px;border-radius:18px"></image>
+        <text class="comment-name">{{content.tbUserEntity.username}}</text>
+      </view>
+      <text class="comment-time">{{content.createTime}}</text>
+    </view>
+    <view class="content" bindtap='details' wx:if='{{content.content == null ? false : true}}'>{{content.content}}</view>
+    <view wx:if='{{content.photos == null? false : true}}'>
+      <view class="images" wx:if="{{content.photos.length > 1}}">
+        <image wx:for='{{content.photos}}' wx:key='{{index}}' id='{{index}}' src='{{item}}' style='width:6.85rem;height:6.85rem;border-radius:3px;margin-right:5px;margin-top:5px;float: left;' bindtap='big'></image>
+        <view style='clear:both;height:0;overflow:hidden;'></view>
+      </view>
+      <view class="images" wx:if="{{content.photos.length == 1}}">
+        <image wx:for='{{content.photos}}' wx:key='{{index}}' id='{{index}}' src='{{item}}' style='border-radius:5px;width:100%;' bindtap='big'></image>
+      </view>
+    </view>
+    <view class="company" wx:if='{{content.status == 0? false:true}}' bindtap='companyDetails'>
+      <image src='{{content.busCompanyEntity.imgShopCover}}' style='width:39px;height:39px;border-radius:5px;border:1px solid #dcdcdc'></image>
+      <text class="company-title">{{content.busCompanyEntity.companyName}}</text>
+    </view>
+  </view>
+  <view class="comment-details">
+    <view class="title">评论</view>
+    <view class="text-number">
+      <text class="number">共{{content.commentCount}}条</text>
+      <image src="./../../../images/moreicon.png" style="width:5px;height:9px;margin-left:0.375rem"></image>
+    </view>
+  </view>
+  <view class="system" wx:if='{{content.systemMomentsinteraction == null?false:true}}'>
+    <text class="system-reply">系统回复</text>
+    <text class="system-text">\t:\t{{content.systemMomentsinteraction.content}}</text>
+  </view>
+  <view class="comment-list" style='padding-bottom:28px;' wx:if='{{content.busMomentsinteractionVoList == 0?false:true}}'>
+    <view wx:for='{{content.busMomentsinteractionVoList}}' wx:key='{{index}}'>
+      <view class="comment-content">
+        <view class="comment-title">
+          <image src="{{item.headportraitimg}}" style="width:35px;height:35px;border-radius:18px"></image>
+          <text class="comment-name">{{item.username}}</text>
+        </view>
+        <view class="comment-time">{{item.createTime}}</view>
+      </view>
+      <view class="comment-text">{{item.content}}</view>
+      <view class='line'></view>
+    </view>
+  </view>
+  <view style='margin-top:30px;padding-bottom:50px;text-align:center;font-size:12px;color:#dcdcdc' wx:if='{{content.busMomentsinteractionVoList == 0?true:false}}'>暂时没有评论</view>
+  <view class='online-comment'>
+    <input class="input" bindinput='text' placeholder="想对她/他说点什么..." placeholder-style="padding-left:10px;font-size:15px;color:#a8abb2" value='{{text}}'></input>
+    <view class="online-comment-text" bindtap='send'>发送</view>
+  </view>
+</view>

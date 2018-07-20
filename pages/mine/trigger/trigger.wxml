@@ -1,0 +1,9 @@
+<view>
+  <view wx:if='{{true}}' class='login' >
+    <image src='./../../../images/mine/head.png' style='width:60px;height:60px;'></image>
+    <button class='trigger' plain='ture' hover-class='none' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <text>授权登陆</text>
+    </button> 
+    <view class='number'>微信手机号登陆</view>
+  </view>
+</view>

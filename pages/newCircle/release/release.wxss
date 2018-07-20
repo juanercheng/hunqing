@@ -1,0 +1,27 @@
+.textarea{
+  /* padding:0.937rem;  */
+  /* border-bottom:1px #dcdcdc solid; */
+  width:100%;
+  height:9.687rem;
+   margin-top: 0.937rem;
+}
+.placeholder{
+  font-size:0.812rem;
+  color:#a8abb2;
+  margin:0.937rem;
+}
+.image{
+  margin-top: 1.25rem; 
+  height: 16rem;
+}
+.iamges-block{
+  float: left;
+}
+.send{
+  width: 36%;
+  height: 2.5rem;
+  text-align: center;
+  color: #fff;
+  background-color: #236093;
+  margin-top:10px;
+}

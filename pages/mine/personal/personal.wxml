@@ -1,0 +1,71 @@
+<view>
+  <view wx:if='{{edit}}'>
+    <view class='line'></view> 
+    <view class='list'>
+      <view>姓名</view>
+      <input class='name' bindinput='name' placeholder='请输入姓名' maxlength='10' value='{{name}}' placeholder-class='name-placeholder' type='text'></input>
+    </view>
+    <view class='list'>
+      <view>年龄</view>
+      <input class='name' bindinput='age' placeholder='请输入年龄' maxlength='3' value='{{age}}' placeholder-class='name-placeholder' type='number'></input>
+    </view>
+    <view class='list-other'>
+      <picker style='width:100%' bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          <view style='display:flex'>
+            性别
+            <view class='name'>{{sexName}}</view>
+          </view>
+          <image src='./../../../images/moreIcon.png' style='width:6px;height:12px;'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='list-other'>
+      <picker style='width:100%' mode="date" value="{{date}}" start='{{nowTime}}' bindchange="bindDateChange">
+        <view class="picker">
+          <view style='display:flex'>
+            婚期
+            <view class='name'>{{date}}</view>
+          </view>
+          <image src='./../../../images/moreIcon.png' style='width:6px;height:12px;'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='list'>
+      <view>预算金额</view>
+      <input class='budget' bindinput='budget' maxlength='10' value='{{budget}}' placeholder='请输入预算金额' placeholder-class='name-placeholder' type='number'></input>
+    </view>
+    <view class='list'>
+      <view>婚礼举办地</view>
+      <input class='address' bindinput='address' maxlength='20' value='{{address}}' placeholder='请输入婚礼举办地' placeholder-class='name-placeholder' type='text'></input>
+    </view>
+    <button class='save' bindtap='save'>保存</button>
+  </view>
+  <view wx:if='{{complete}}'>
+    <view class='list-complete'>
+      <view>姓名</view>
+      <view>{{name}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>年龄</view>
+      <view>{{age}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>性别</view>
+      <view>{{sexName}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>婚期</view>
+      <view>{{date}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>预算金额</view>
+      <view>{{budget}}</view>
+    </view>
+    <view class='list-complete'>
+      <view>婚礼举办地</view>
+      <view>{{address}}</view>
+    </view>
+    <button class='button-edit' plain='true' bindtap='buttonEdit'>编辑</button>
+  </view>
+</view>

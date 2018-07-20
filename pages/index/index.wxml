@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view>
+   <swiper style='height:275px' indicator-dots="false" autoplay="false" interval="5000" duration="1000" indicator-active-color="#fff"> 
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.advertisementimg}}" id="{{index}}" bindtap='jump' style='width:100%;height:275px' />
+      </swiper-item>
+    </block>
+  </swiper>
+    <input type='text' class='input' bindtap="run" placeholder='|  输入关键字搜索' placeholder-class='placeholder' disabled='true'></input>
+  <view class='title-bar'>
+    <view class='title-along' wx:for='{{small}}' wx:key='{{index}}' id='{{index}}' bindtap='caseListFirst'>
+      <image style='width:2.937rem;height:2.937rem' src='{{item.extend1}}'></image>
+      <text class='title-text'>{{item.categoryName}}</text>
+    </view>
+  </view>
+  <scroll-view class='scroll-H' scroll-x>
+      <view class='alone' bindtap='company'>
+        <text style='font-weight: bold'>婚庆</text>
+        <text>公司</text>
+      </view>
+      <view wx:for='{{big}}' class='typeCase' wx:key='{{index}}' id='{{index}}' bindtap='caseListTwo' style="background-image:url({{item.extend1}});">
+        <text style='font-weight: bold'>{{item.categoryName[0] + item.categoryName[1]}}</text>
+        <text>{{item.categoryName[2] + item.categoryName[3]}}</text>
+      </view>
+  </scroll-view>
+  <view class='recommend-shop'>
+    <text>推荐店铺</text>
+    <image bindtap="recommendShop" style='width:0.375rem;height:0.75rem' src='./../../images/moreIcon.png'></image>
+  </view>
+  <view class="list" wx:for="{{recommendShop}}" data-id="{{item.id}}" wx:key="{{index}}">
+    <view class="bg-images" id='{{index}}' bindtap='commpany'>
+      <view class='content' style='background-image:url({{item.imgShopBackground}});background-size:100% 100%;'>
+        <image src='{{item.logo}}' style="width:3.875rem;height:3.875rem;margin-top:1.4rem;border-radius: 1.937rem;"></image>
+        <view class='title-content'>{{item.companyName}}</view>
+        <view class="title-content-text">{{item.companySlogan}}</view>
+      </view>
+    </view>
+    <view class="location">
+      <image src='./../../images/home/location.png' style="width:0.562rem;height:0.75rem;"></image>
+      <text class='address'>{{item.address}}</text>
+    </view>
+    <view class="list-details">
+      <view class="list-details-content" wx:for="{{item.productList}}" wx:key="{{index}}" data-id="{{item.id}}">
+        <view id='{{index}}' class="content-one" data-company="{{item.companyId}}" bindtap='caseDetalis'>
+          <view>
+            <image src='{{item.imgCover}}' style="height:7.687rem;width:10rem"></image>
+          </view>
+          <view class="content-one-right">
+            <view class="title" style='font-size:1rem'>{{item.productName}}</view>
+            <view class="title-text">{{item.brief}}</view>
+            <view class="price">
+              <text>预订价</text>
+              <text class="text">￥{{item.priceBook}}</text>
+            </view>
+          </view>
+        </view>
+        <view style='height:1px;background-color:#dcdcdc;width:100%;margin-bottom:0.937rem'></view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideNoMore}}">
+    <view class="weui-loadmore__tips">没有更多了</view>
+  </view>
+</view>

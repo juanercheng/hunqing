@@ -1,0 +1,29 @@
+<view>
+ <view class='list'>
+    <view class='order-number'>
+      <view>订单编号：265464326465321</view>
+      <view style='font-size:0.875rem;color:#116699'>待支付</view>
+    </view>
+    <view class='commodity'>
+      <view class='gray'>
+        <view class='image'>
+          <image src='./../../../images/bg.png' style='width:6.562rem;height:4.687rem;border-radius: 5px;'></image>
+        </view>
+        <view class='title'>
+          <view>北海道哈十九点哈十九点</view>
+          <view class='price'>预订价
+            <text style='color:red'>￥1000.00</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='company'>
+      <image src='./../../../images/bg.png' style='width:2.5rem;height:2.5rem;border: 1px #ced3db solid;border-radius: 3px;'></image>
+      <view class='company-text'>
+        <view class='company-title'>维多利亚婚礼会所</view>
+        <view class='company-phone'>021-88888888</view>
+      </view>
+    </view>
+    <view class='line'></view>
+  </view>
+</view>

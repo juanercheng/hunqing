@@ -1,0 +1,149 @@
+.null{
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+  color: #dcdcdc;
+}
+.top {
+  width: 100%;
+  color: #fff;
+  
+}
+
+.top .top-title {
+  padding-top: 1.437rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.937rem;
+  margin-left: 0.937rem;
+}
+
+.top .top-title .top-title-image {
+  margin-right: 0.937rem;
+  display: flex;
+  align-items: center;
+}
+
+.top .top-title .top-title-comment {
+  text-align: center;
+}
+
+.top .top-title .top-title-comment .top-title-number {
+  font-size: 0.812rem;
+}
+
+.top .top-title .top-title-comment .top-title-text {
+  font-size: 0.75rem;
+  margin-top: 0.85rem;
+}
+
+.top .top-title .top-title-image .top-title-right {
+  margin-left: 0.875rem;
+}
+
+.top .top-title .top-title-image .top-title-right .title {
+  font-size: 1.062rem;
+}
+
+.top .top-title .top-title-image .top-title-right .text {
+  font-size: 0.75rem;
+  margin-top: 0.625rem;
+  color: #d8d5d4;
+}
+
+.phone {
+  /* width:4.625rem;
+  height:1.562rem; */
+  border: 1px #fff solid;
+  padding: 6px 24px 6px 24px;
+  border-radius: 5px;
+  font-size: 0.812rem;
+}
+
+.top .company-title {
+  margin-top: 0.875rem;
+  margin-right: 0.937rem;
+  margin-left: 0.937rem;
+  font-size: 1.062rem;
+}
+
+.top .scroll {
+  height: 80px;
+  width: 100%;
+  margin-top: 0.875rem;
+  font-size: 0.812rem;
+}
+
+.shop-title {
+  margin-left: 0.937rem;
+  margin-top: 1.875rem;
+  margin-right: 0.937rem;
+}
+
+.shop-content {
+  margin-top: 1.25rem;
+  padding-right: 0.937rem;
+  margin-left: 0.937rem;
+}
+
+.list {
+  margin-top: 0.937rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px #dcdcdc solid;
+  padding-bottom: 0.937rem;
+}
+
+/* .list .list-left {
+  width: 50%;
+} */
+
+.list .list-right {
+  margin-left: 0.937rem;
+}
+
+.list .list-right .list-title {
+  font-size: 1rem;
+  display: -webkit-box; 
+  text-overflow: ellipsis;
+  overflow : hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.list .list-right .list-text {
+  font-size: 0.75rem;
+  margin-top: 0.625rem;
+  color: #a8abb2;
+  display: -webkit-box; 
+  text-overflow: ellipsis;
+  overflow : hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.list .list-right .list-price {
+  font-size: 0.75rem;
+  margin-top: 1.437rem;
+}
+
+.recommend {
+  margin-left: 0.937rem;
+  margin-right: 0.937rem;
+  margin-top: 2.5rem;
+}
+
+.recommend-list {
+  margin-right: 0.937rem;
+  margin-left: 0.937rem;
+  margin-top: 25px;
+  
+}
+
+.recommend-list .list-content {
+  width:47%;    
+  margin-right: 8px;
+  margin-bottom: 2.5rem;
+  float: left;
+}

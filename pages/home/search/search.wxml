@@ -1,0 +1,60 @@
+<view> 
+  <view class='header'>
+    <image src='./../../../images/home/search.png' style='width:14px;height:14px;margin-left: 10px;'></image>
+    <view class='line'></view>
+    <input type='text' class='input' bindinput='searchText' focus='true'></input>
+  </view>
+  <view class='case' wx:if='{{busProductList.length == 0 ? false : true}}'>
+    <view class='case-title'>案例</view>
+    <view wx:for='{{busProductList}}' data-id="{{item.id}}" wx:key="{{index}}">
+      <view class='case-list' id="{{index}}" bindtap='list'>
+        <view style='width:50%'>
+          <image src='{{item.imgCover}}' style='width:100%;height:123px;'></image>
+        </view>
+        <view class='case-list-content'>
+          <view class='case-list-title'>{{item.productName}}</view>
+          <view class='case-list-text'>{{item.brief}}</view>
+          <view class='case-list-all-price'>总价 ￥{{item.priceTotal}}</view>
+          <view class='case-list-price'>预订价
+            <text style='color:red'>￥{{item.priceBook}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='more' id='case' wx:if='{{caseMore}}' bindtap='more'>点击加载更多</view>
+    <view style='margin-top:20px;font-size:14px;color:#a8abb3;text-align:center' wx:if='{{caseNoMore}}'>没有更多了</view>
+  </view>
+  <view class='case' style='' wx:if='{{busProductList.length == 0 ? true : false}}'>
+    <view class='case-title'>案例</view>
+    <view style='text-align:center;padding-top:2.5rem;padding-bottom:2.5rem'>
+      <image src='./../../../images/home/searchNo.png' style='height:5.062rem;width:6.75rem;'></image>
+      <view style='margin-top:1.25rem;font-size:0.875rem;color:#a8abb3'>没有搜索到相关信息</view>
+    </view>
+  </view>
+  <view class='case' wx:if='{{busCompanyList.length == 0 ? false : true}}'>
+    <view class='case-title'>店铺</view>
+    <view class="list" wx:for='{{busCompanyList}}' data-id="{{item.id}}" wx:key="{{index}}">
+      <view id='{{index}}' bindtap='listCompany'>
+        <view class='image' style='background-image:url({{item.imgShopBackground}})'>
+          <image src='{{item.logo}}' style='width:3.875rem;height:3.875rem;margin-top:1.4rem;border-radius: 1.937rem;'></image>
+          <view class='title-content'>{{item.companyName}}</view>
+          <view class="title-content-text">{{item.companySlogan}}</view>
+        </view>
+        <view class='location'>
+          <image src='./../../../images/home/location.png' style='width:9px;height:12px'></image>
+          <text class='location-text'>{{item.address}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='more' id='company' wx:if='{{companyMore}}' bindtap='more'>点击加载更多</view>
+    <view style='margin-top:20px;font-size:14px;color:#a8abb3;text-align:center' wx:if='{{companyNoMore}}'>没有更多了</view>
+    <view style='padding-top:2.5rem'></view>
+  </view>
+  <view class='case' style='' wx:if='{{busCompanyList.length == 0 ? true : false}}'>
+    <view class='case-title'>案例</view>
+    <view style='text-align:center;padding-top:2.5rem;padding-bottom:2.5rem'>
+      <image src='./../../../images/home/searchNo.png' style='height:5.062rem;width:6.75rem;'></image>
+      <view style='color:#a8abb3;margin-top:1.25rem;font-size:0.875rem;'>没有搜索到相关信息</view>
+    </view>
+  </view>
+</view>

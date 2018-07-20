@@ -1,0 +1,38 @@
+<view> 
+  <view class='commodity'>
+    <view class='gray'>
+      <view class='image'>
+        <image src='{{content.productLogo}}' style='width:6.562rem;height:4.687rem;border-radius: 5px;'></image>
+      </view>
+      <view class='title'>
+        <view>{{content.productName}}</view>
+        <view class='price'>预订价
+          <text style='color:red'>￥{{content.productPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style='background-color:#fff'>
+  <view class='company'>
+    <image src='{{content.companyLogo}}' style='width:2.5rem;height:2.5rem;border: 1px #ced3db solid;border-radius: 3px;'></image>
+    <view class='company-text'>
+      <view class='company-title'>{{content.companyName}}</view>
+      <view class='company-phone'>{{content.companyTels}}</view>
+    </view>
+  </view>
+  </view>
+  
+  <view class='order-details'>
+    <view class='order-number'>订单编号：{{content.orderNo}}</view>
+    <view class='order-time'>下单时间：{{content.orderPlaceTime}}</view>
+    <view class='order-time'>付款时间：{{content.orderPayTime}}</view>
+  </view>
+  <view class='line'></view>
+  <view style='heighr:11.75rem'>
+  <view class='refund'>退款原因</view>
+  <textarea class='textarea' placeholder-class='placeholder' bindinput='reason' placeholder="请输入退款原因，最多可输入200字~" />
+  </view>
+  <view style='background-color:#f0f2f5'>
+   <button class='buttton' bindtap='submit'>提交</button>
+  </view>
+</view>

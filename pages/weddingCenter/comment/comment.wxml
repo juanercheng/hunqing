@@ -1,0 +1,35 @@
+<view>
+  <view class='commodity'> 
+    <view class='gray'>
+      <view class='image'> 
+        <image src='{{content.productLogo}}' style='width:6.562rem;height:4.687rem;border-radius: 5px;'></image>
+      </view>
+      <view class='title'>
+        <view>{{content.productName}}</view>
+        <view class='price'>预订价 
+          <text style='color:red'>￥{{content.productPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='company'>
+    <image src='{{content.companyLogo}}' style='width:2.5rem;height:2.5rem;border: 1px #ced3db solid;border-radius: 3px;'></image>
+    <view class='company-text'>
+      <view class='company-title'>{{content.companyName}}</view>
+      <view class='company-phone'>{{content.companyTels}}</view>
+    </view>
+  </view>
+  <view class='order-details'>
+    <view class='order-star'>
+      <text>· 请为我们的服务做出评价 ·</text>
+    <view class='star'>
+      <image wx:for='{{star}}' wx:key='{{index}}' src='{{item}}' id='{{index}}' bindtap='starBind' style='width:23px;height:23px;'></image>
+    </view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <textarea class='textarea' placeholder-class='placeholder' placeholder="有什么想对我们说的么~" bindinput='textarea'/>
+  <view>
+   <button class='buttton' bindtap='send' disabled='{{sendDisabled}}'>提交</button>
+  </view>
+</view>

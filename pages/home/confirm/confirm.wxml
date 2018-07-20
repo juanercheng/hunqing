@@ -1,0 +1,30 @@
+<view>
+  <view class='outside'>
+    <view class='list'> 
+      <view style='width:50%'>
+        <image src='{{content.imgCover}}' style='width:100%;height:123px;'></image>
+      </view>
+      <view class='list-content'>
+        <view class='list-title'>{{content.productName}}</view>
+        <view class='list-text'>{{content.brief}}</view>
+        <view class='list-price'>预订价
+          <text style='color:red'>￥{{content.priceTotal}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='about'>
+    <view class='about-first'>
+      <image src='./../../../images/home/shop.png' style='width:14px;height:14px'></image>
+      <view style='margin-left:15px'>{{content.busCompanyEntity.companyName}}</view>
+    </view>
+    <view class='about-two' bindtap='call'>
+      <image src='./../../../images/home/phone.png' style='width:14px;height:14px'></image>
+      <view style='margin-left:15px'>{{content.busCompanyEntity.tels}}</view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='price'>总金额 ￥{{content.priceTotal}}</view>
+    <view class='order' bindtap='pay'>提交订单</view>
+  </view>
+</view>

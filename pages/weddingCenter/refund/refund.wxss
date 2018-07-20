@@ -1,0 +1,54 @@
+.line{
+  height: 10px;
+  width: 100%;
+  background-color: #f0f2f5;
+}
+.list .order-number{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.812rem;
+  color: #a8abb3;
+  margin-left: 0.937rem;
+  margin-right:0.937rem;
+}
+.list .commodity{
+  background-color: #f7f8fa;
+  width: 100%;
+  margin-top: 15px;
+}
+.list .commodity .gray{
+  margin-left: 0.937rem;
+  margin-right:0.937rem;
+  padding-top: 0.937rem;
+  padding-bottom: 0.937rem;
+  display: flex;
+  align-items: center;
+  
+}
+.list .commodity .gray .title{
+  font-size: 0.875rem;
+  margin-left: 0.875rem;
+}
+.list .commodity .gray .title .price{
+  margin-top: 18px;
+  font-size: 0.75rem;
+}
+.list .company{
+  display: flex;
+  align-items: center;
+  margin-left: 0.937rem;
+  margin-right:0.937rem;
+  margin-top: 15px;
+  /* border-bottom: 1px #ced3db solid; */
+  padding-bottom: 0.937rem;
+}
+.list .company .company-text{
+  margin-left:0.812rem;
+  font-size: 14px;
+}
+.list .company .company-phone{
+  font-size:11px;
+  margin-top:11px;
+}

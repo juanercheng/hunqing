@@ -1,0 +1,61 @@
+<view>
+  <view class='image-title' wx:if='{{content.orderStatus == 0}}'>待支付</view>
+  <view class='image-title' wx:elif='{{content.orderStatus == 1}}'>已付款</view>
+  <view class='image-title' wx:elif='{{content.orderStatus == 4}}'>已完成</view>
+  <view class='image-title' wx:elif='{{content.orderStatus == 5}}'>已取消</view>
+  <view class='image-title' wx:elif='{{content.orderStatus == 80}}'>退款审核中</view>
+  <view class='image-title' wx:elif='{{content.orderStatus == 81}}'>退款中</view>
+  <view class='image-title' wx:elif='{{content.orderStatus == 86}}'>已退款</view>
+  <view class='image-title' wx:else='{{content.orderStatus == 82}}'>
+    <view>退款失败</view>
+    <view style='margin-top:16px;font-size:12px;color:black'>{{content.refundFailReason}}</view>
+  </view>
+  <view class='line'></view>
+  <view class='commodity'>
+    <view class='gray'>
+      <view class='image'>
+        <image src='{{content.productLogo}}' style='width:6.562rem;height:4.687rem;border-radius: 5px;'></image>
+      </view>
+      <view class='title'>
+        <view>{{content.productName}}</view>
+        <view class='price'>预订价
+          <text style='color:red'>￥{{content.orderPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='company'>
+      <image src='{{content.companyLogo}}' style='width:2.5rem;height:2.5rem;border: 1px #ced3db solid;border-radius: 3px;'></image>
+      <view class='company-text'>
+        <view class='company-title'>{{content.companyName}}</view>
+        <view class='company-phone'>{{content.companyTels}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='order-details'>
+    <view class='order-number'>订单编号：{{content.orderNo}}</view>
+    <view class='order-time'>下单时间：{{content.orderPlaceTime}}</view>
+    <view class='order-timeOne' wx:if='{{content.orderStatus == 0?false:content.orderStatus == 5?false:true}}'>付款时间：{{content.orderPayTime}}</view>
+  </view>
+
+  <!-- <view class='button'>
+    <view class='empty'>取消预定</view>
+    <view class='full'>去支付</view>
+  </view>  -->
+  <view class='button' wx:if='{{content.orderStatus == 0}}'>
+    <view class='empty' bindtap='reservation'>取消预定</view>
+    <view class='full' bindtap='pay'>去支付</view>
+  </view>
+  <view class='button' wx:if='{{content.orderStatus == 1}}'>
+    <view class='empty' bindtap='refundMoney'>退款</view>
+    <view class='full' bindtap='comment' wx:if='{{content.asComment == 0}}'>评论</view>
+    <view class='full' bindtap='circle' wx:if='{{content.asMoment == 0}}'>发圈</view>
+  </view>
+  <view class='button' wx:if='{{content.orderStatus == 4}}'>
+    <view class='full' bindtap='comment' wx:if='{{content.asComment == 0}}'>评论</view>
+    <view class='full' bindtap='circle' wx:if='{{content.asMoment == 0}}'>发圈</view>
+  </view>
+  <view wx:if='{{content.orderStatus == 6? false : content.orderStatus == 5? false:false}}'>
+  </view>
+</view>

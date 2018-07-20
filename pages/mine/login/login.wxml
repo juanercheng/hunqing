@@ -1,0 +1,11 @@
+<view>
+  <view class='code' wx:if='{{true}}'>
+    <view style='text-align:center'>请输入短信验证码</view>
+    <view class='input'>
+      <input type='number' bindinput='msg' placeholder-class='input-text' placeholder='请输入验证码'></input>
+      <button class='again' bindtap='codeMsg' plain='true'>重新获取</button>
+    </view> 
+    <button class='login' bindtap='loginNow'>立即登陆</button>
+    <view class='other' bindtap='other'>使用其他手机号登陆</view>
+  </view>
+</view>

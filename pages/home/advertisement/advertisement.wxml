@@ -1,0 +1,4 @@
+<web-view src='{{url}}' wx:if='{{link}}'></web-view>
+<view style='margin:0.937rem' wx:if='{{busid}}'>
+  <rich-text nodes='{{content}}'></rich-text>
+</view>

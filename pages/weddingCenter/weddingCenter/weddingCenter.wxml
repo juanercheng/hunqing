@@ -1,0 +1,84 @@
+<view> 
+  <view class='type-button'>
+    <view class='type' bindtap='wite'> 
+      <image src='./../../../images/weddingCenter/wite.png' style='width:33px;height:31px'></image>
+      <view class='text'>待付款</view>
+    </view>
+    <view class='type' bindtap='payment'> 
+      <image src='./../../../images/weddingCenter/payment.png' style='width:33px;height:31px'></image>
+      <view class='text'>已付款</view>
+    </view>
+    <view class='type' bindtap='complete'>
+      <image src='./../../../images/weddingCenter/complete.png' style='width:33px;height:31px'></image>
+      <view class='text'>已完成</view>
+    </view> 
+    <view class='type' bindtap='refund'>
+      <image src='./../../../images/weddingCenter/refund.png' style='width:33px;height:31px'></image>
+      <view class='text'>退款</view>  
+    </view>
+  </view> 
+  <view class='top-line-top'></view>
+  <view class='line' style='margin-top: 102px;'></view>
+  <view class='list' wx:for='{{orderNo}}' wx:key='{{index}}'>
+    <view class='order-number' id='{{index}}' bindtap='details'>
+      <view>订单编号：{{item.orderNo}}</view>
+      <view style='font-size:0.875rem;color:#116699' wx:if='{{item.orderStatus == 0}}'>待付款</view>
+       <view style='font-size:0.875rem;color:#116699' wx:elif='{{item.orderStatus == 1}}'>已付款</view>
+      <view style='font-size:0.875rem;color:#116699' wx:elif='{{item.orderStatus==4}}'>已完成</view>
+      <view style='font-size:0.875rem;color:#116699' wx:elif='{{item.orderStatus==5}}'>已取消</view>
+      <view style='font-size:0.875rem;color:#116699' wx:elif='{{item.orderStatus==80}}'>退款审核中</view>
+      <view style='font-size:0.875rem;color:#116699' wx:elif='{{item.orderStatus==81}}'>退款中</view>
+      <view style='font-size:0.875rem;color:#116699' wx:elif='{{item.orderStatus==82}}'>已退款</view>
+      <view style='font-size:0.875rem;color:#116699' wx:else='{{item.orderStatus==86}}'>退款失败</view>
+      <!-- <view style='font-size:0.875rem;color:#116699' wx:else='{{item.orderStatus==6}}'>
+        <text wx:if='{{item.extends1 == 80}}'>退款审核中</text>
+        <text wx:elif='{{item.extends1 == 81}}'>退款中</text>
+        <text wx:elif='{{item.extends1 == 86}}'>已退款</text>
+        <text wx:else='{{item.extends1 == 82}}'>退款失败</text>
+      </view>  -->
+    </view>
+    <view class='commodity' id='{{index}}' bindtap='details'>
+      <view class='gray'>
+        <view class='image'>
+          <image src='{{item.productLogo}}' style='width:6.562rem;height:4.687rem;border-radius: 5px;'></image>
+        </view>
+        <view class='title'>
+          <view>{{item.productName}}</view>
+          <view class='price'>预订价
+            <text style='color:red'>￥{{item.orderPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+     <view class='{{item.orderStatus == 6? "companyNone": item.orderStatus == 5?"companyNone":"company"}}' bindtap='details' id='{{index}}'>
+      <image src='{{item.companyLogo}}' style='width:2.5rem;height:2.5rem;border: 1px #ced3db solid;border-radius: 3px;'></image>
+      <view class='company-text'>
+        <view class='company-title'>{{item.companyName}}</view>
+        <view class='company-phone'>{{item.companyTels}}</view>
+      </view>
+    </view> 
+    <view class='button' wx:if='{{item.orderStatus == 0}}'>
+      <view class='empty' id='{{index}}' bindtap='reservation'>取消预定</view>
+      <view class='full' id='{{index}}' bindtap='pay' >去支付</view>
+    </view>
+    <view class='button' wx:if='{{item.orderStatus == 1}}'>
+      <view class='empty' id='{{index}}' bindtap='refundMoney'>退款</view>
+      <view class='full' id='{{index}}' bindtap='comment' wx:if='{{item.asComment == 0}}'>评论</view>
+      <view class='full' id='{{index}}' bindtap='circle' wx:if='{{item.asMoment == 0}}'>发圈</view>
+    </view>
+    <view class='button' wx:if='{{item.orderStatus == 4}}'>
+      <view class='full' id='{{index}}' bindtap='comment' wx:if='{{item.asComment == 0}}'>评论</view>
+      <view class='full' id='{{index}}' bindtap='circle' wx:if='{{item.asMoment == 0}}'>发圈</view>
+    </view>
+    <view wx:if='{{item.orderStatus == 6? false : item.orderStatus == 5? false:false}}'>
+    </view>
+    <view class='line'></view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideNoMore}}">
+    <view class="weui-loadmore__tips">没有更多了</view>
+  </view> 
+</view>

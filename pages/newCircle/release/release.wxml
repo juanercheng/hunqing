@@ -1,0 +1,19 @@
+<view>
+  <view style='padding-left: 0.937rem;padding-right: 0.937rem;border-bottom: 1px solid #dcdcdc;'>
+    <textarea class='textarea' bindinput='textarea' placeholder-class='placeholder' placeholder="分享一下你现在的心情吧~" />
+  </view>
+  <view class='image'>
+    <view class='iamges-block' wx:if="{{imagesContent}}" wx:for='{{images}}' data-id="{{item.id}}" wx:key="{{index}}">  
+      <image src='{{item}}' style="width:105px;height:105px;margin-left:0.937rem" bindtap='deleteImage'>
+      </image> 
+      <image src='./../../../images/newCircle/close.png' style="width:20px;height:20px;position: absolute;margin-left:-20px;" id='{{index}}' bindtap='deleteImage'></image>
+    </view>
+    <view class='iamges-block' wx:if="{{addImages}}">
+      <image bindtap='add' src="./../../../images/newCircle/add.png" style="width:105px;height:105px;margin-left:0.937rem">
+      </image>
+    </view>
+  </view>
+  <view style='margin-top:10px;;clear:both;'>
+    <button class='send' bindtap='send' disabled='{{sendDisabled}}'>发布</button>
+  </view>
+</view>

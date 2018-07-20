@@ -1,0 +1,42 @@
+<view>
+  <view wx:for='{{list}}' wx:key='{{index}}'>
+    <image src="./../../../images/newCircle/edit.png" class="edit" bindtap='release'></image>
+    <view>
+      <view class="newCircle"> 
+        <view class="comment" id='{{item.id}}' bindtap='details'>
+          <view class='comment-man'> 
+            <image src='{{item.headportraitimg}}' style="width:35px;height:35px;border-radius:18px"></image>
+            <text class="comment-name">{{item.username}}</text>
+          </view> 
+          <text class="comment-time">{{item.createTime}}</text>
+        </view>
+        <view class="content" id='{{item.id}}' bindtap='details' wx:if="{{item.content == null? false:true}}">{{item.content}}</view>
+        <view wx:if="{{item.photos == null? false:true}}">
+          <view class="images" wx:if="{{item.photos.length > 1}}">
+            <image wx:for='{{item.photos}}' wx:for-item="image" id='{{item.id}}' wx:key='{{index}}'  src='{{image}}' style='width:6.85rem;height:6.85rem;border-radius:3px;margin-right:5px;margin-top:5px;float: left;' data-src="{{image}}" bindtap='big'></image>
+            <view style='clear:both;height:0;overflow:hidden;'></view>
+          </view>
+          <view class="images" id='1' wx:if="{{item.photos.length == 1}}">
+            <image wx:for='{{item.photos}}' wx:for-item="image" wx:key='{{index}}' id='{{item.id}}' src='{{image}}' style='border-radius:5px;width:100%' bindtap='big'></image>
+          </view>
+        </view>
+        <view class="company" id='{{index}}' bindtap='companyDetails' wx:if='{{item.status == 0? false:true}}'>
+          <image src='{{item.logo}}' style='width:39px;height:39px;border-radius:5px'></image>
+          <text class="company-title">{{item.companyName}}</text>
+        </view>
+        <view class="comment-image">
+          <image src="./../../../images/newCircle/comment.png" id='{{item.id}}' style="width:16px;height:13px;margin-top:0.937rem" bindtap='details'></image>
+          <text style="font-size:0.625rem;margin-left:0.5rem" id='{{item.id}}' bindtap='details'>{{item.commentCount}}</text>
+        </view>
+      </view>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{isHideNoMore}}">
+    <view class="weui-loadmore__tips">没有更多了</view>
+  </view> 
+</view>
